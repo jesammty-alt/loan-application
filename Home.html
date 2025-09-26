@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Application</title>
+
+  <!-- Favicon (Logo in browser tab) -->
+  <link rel="icon" type="image/png" href="BeaconLogo.png">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #f5f7fa;
+    }
+
+    /* Logo styling */
+    .logo {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 999; 
+      left: 0; 
+      top: 0; 
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.5); 
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease-in-out;
+      text-align: left;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .modal-header img {
+      max-height: 50px;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <img src="BeaconLogo.png" alt="Beacon Finance Logo" class="logo">
+
+  <h1>Welcome to Beacon Finance Corporation Loan Application Portal</h1>
+  <p>Click below to start your loan application.</p>
+  
+  <button onclick="openModal()">Apply Now</button>
+
+  <!-- Modal -->
+  <div id="loanModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="BeaconLogo.png" alt="Beacon Logo">
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+      <h2>Loan Application Form</h2>
+      <iframe allowtransparency="true"
+              allowfullscreen="allowfullscreen"
+              frameborder="0"
+              src="https://x.loandisk.com/form_api/iframe.php?formSlug=HRfI4JmZAvgrDjak3Y5uEqwCbeipQV">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("loanModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("loanModal").style.display = "none";
+    }
+
+    // Close modal if user clicks outside the content
+    window.onclick = function(event) {
+      const modal = document.getElementById("loanModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
