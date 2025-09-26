@@ -16,15 +16,23 @@
       background: #f5f7fa;
     }
 
-    /* Logo styling */
+    /* Centered header block */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
     .logo {
       max-width: 180px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     h1 {
       color: #333;
-      margin-top: 10px;
+      margin: 0;
     }
 
     button {
@@ -64,21 +72,25 @@
       max-width: 800px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       animation: fadeIn 0.3s ease-in-out;
-      text-align: left;
+      text-align: center; /* center everything inside modal */
     }
 
     .modal-header {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
       margin-bottom: 10px;
     }
 
     .modal-header img {
-      max-height: 50px;
+      max-height: 60px;
+      margin-bottom: 10px;
     }
 
     .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
       color: #aaa;
       font-size: 28px;
       font-weight: bold;
@@ -104,22 +116,23 @@
 </head>
 <body>
 
-  <!-- Logo -->
-  <img src="BeaconLogo.png" alt="Beacon Finance Logo" class="logo">
+  <!-- Centered logo + title -->
+  <div class="header">
+    <img src="TransLogo.png" alt="Trans Finance Logo" class="logo">
+    <h1>Welcome to Trans Asiatic Finance Inc. Loan Application Portal</h1>
+  </div>
 
-  <h1>Welcome to Beacon Finance Corporation Loan Application Portal</h1>
   <p>Click below to start your loan application.</p>
-  
   <button onclick="openModal()">Apply Now</button>
 
   <!-- Modal -->
   <div id="loanModal" class="modal">
     <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
       <div class="modal-header">
-        <img src="BeaconLogo.png" alt="Beacon Logo">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="TransLogo.png" alt="Trans Finance Logo">
+        <h2>Loan Application Form</h2>
       </div>
-      <h2>Loan Application Form</h2>
       <iframe allowtransparency="true"
               allowfullscreen="allowfullscreen"
               frameborder="0"
